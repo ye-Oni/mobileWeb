@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>키워드 검색 서비스</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <!-- Customer CSS  -->
+    <link rel="stylesheet" href="./css/upload.css" />
+  </head>
+  <body>
+    <div>
+      <!-- Navigation-->
+      <nav class="navbar navbar-light bg-dark fixed-top">
+        <div class="container">
+          <div><a class="btn btn-outline-primary" href="/">MapService</a></div>
+          <div>
+            <a class="btn btn-outline-success" href="/upload"
+              >Search & Upload</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- 카카오 지도 표시 -->
+    <div id="map"></div>
+
+    <!-- 키워드 검색창과 검색 결과 보여주기 -->
+    <div id="menu_wrap">
+      <!-- return false; 새로 고침이 발생하지 않도록 선언 -->
+      <form
+        class="form-inline my-2 my-lg-0"
+        onsubmit="searchPlaces(); return false;"
+        action=""
+      >
+        <input
+          id="keyword"
+          class="form-control mr-sm-2"
+          type="text"
+          value="서울시청"
+        />
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">
+          검색하기
+        </button>
+      </form>
+      <hr />
+
+      <div id="placesList">
+        <!-- 검색 결과 list -->
+      </div>
+      <hr />
+
+      <div id="pagination">
+        <!-- pagination -->
+      </div>
+    </div>
+
+    <!-- jQuery CDN  -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Kakao CDN -->
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4e120bbbbff1a2a57d5ac1d81e5ceab9&libraries=services"></script>
+
+    <!-- Customer Script  -->
+    <script src="./js/upload.js"></script>
+  </body>
+</html>

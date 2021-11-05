@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>키워드 검색 서비스</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <!-- Customer CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div>
+      <!-- Navigation-->
+      <nav class="navbar navbar-light bg-dark fixed-top">
+        <div class="container">
+          <div><a class="btn btn-outline-primary" href="/">MapService</a></div>
+          <div>
+            <a class="btn btn-outline-success" href="/upload"
+              >Search & Upload</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--네이버 지도 표시 -->
+    <div id="map"></div>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Naver API CDN -->
+    <script
+      type="text/javascript"
+      src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=muf2qqr618"
+    ></script>
+
+    <!-- 마커 클러스터링(MarkerClustering) script -->
+    <script src="./js/MarkerClustering.js"></script>
+
+    <!-- Customer script -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
