@@ -1,0 +1,21 @@
+/* Header 영역*/
+/*.navbar{*/
+    /*background-color: #d7382a;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.navbar .navbar-brand{*/
+    /*color:#FFF;*/
+    /*font-family:'Noto Sans Korean', sans-serif;*/
+/*}*/
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(255,102,203);
+}
+
+/* table 영역 */
+
+table th{
+    text-align: center;
+    font-family:'Noto Sans Korean', sans-serif;
+}

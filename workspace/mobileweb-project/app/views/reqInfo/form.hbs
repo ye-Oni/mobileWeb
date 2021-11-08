@@ -1,0 +1,40 @@
+<!-- 경락정보조회(reqInfo) view 페이지 템플릿(조회하기 페이지) -->
+
+<div class="col-md-12">
+  <form method="get" action="/reqInfo/result">
+    <input type="hidden" name="lcode" value="06" />
+    <div class="form-group row">
+      <label
+        for="example-date-input"
+        class="col-4 col-form-label"
+      >경매일시</label>
+      <div class="col-8">
+        <input
+          name="date"
+          class="form-control input-today"
+          type="date"
+          value=""
+          id="example-date-input"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label
+        for="example-date-input"
+        class="col-4 col-form-label"
+      >청과종류</label>
+      <div class="col-8">
+        <select class="form-control" name="mcode" id="exampleSelect1">
+          {{#each marketList}}
+            <option value="{{this.mcode}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <button
+      type="submit"
+      id="btn-market-search"
+      class="btn btn-primary btn-lg btn-block"
+    >조회하기</button>
+  </form>
+</div>

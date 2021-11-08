@@ -1,0 +1,34 @@
+<!-- 경락정보조회및저장(reqSaveInfo) DB저장내역 조회 view 페이지 템플릿(DB저장내역 조회 페이지) -->
+
+<div class="row">
+  <div class="col-sm-12">
+    <h4 class="mt-4 mb-4">{{marketHistory.date}}일 /
+      {{marketHistory.fruit}}
+      도매경매 현황</h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>도매시장</th>
+          <th>도매법인</th>
+          <th>평균가</th>
+          <th>거래량</th>
+          <th>규격</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each marketHistory.result}}
+          <tr>
+            <td>{{this.marketname}}</td>
+            <td>{{this.coname}}</td>
+            <td>{{this.avgprice}}</td>
+            <td>{{this.sumamt}}</td>
+            <td>{{this.unitname}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+<a href="/reqSaveInfo" class="btn btn-primary btn-lg btn-block">목록으로</a>

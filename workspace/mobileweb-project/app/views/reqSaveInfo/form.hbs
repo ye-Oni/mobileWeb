@@ -1,0 +1,78 @@
+<!-- 경락정보조회및저장(reqSaveInfo) view 페이지 템플릿(조회및저장하기 페이지) -->
+
+<div class="col-md-12">
+  <!-- <form method="get" action="/reqSaveInfo/result">  -->
+  <input type="hidden" name="lcode" value="06" />
+  <div class="form-group row">
+    <label
+      for="example-date-input"
+      class="col-4 col-form-label"
+    >경매일시</label>
+    <div class="col-8">
+      <input
+        name="date"
+        class="form-control input-today"
+        type="date"
+        value=""
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label
+      for="example-date-input"
+      class="col-4 col-form-label"
+    >최대저장개수</label>
+    <div class="col-8">
+      <input name="count" class="form-control" type="number" value="10" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label
+      for="example-date-input"
+      class="col-4 col-form-label"
+    >청과종류</label>
+    <div class="col-8">
+      <select class="form-control" name="mcode" id="exampleSelect1">
+        {{#each marketList}}
+          <option value="{{this.mcode}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <button
+    type="submit"
+    id="btn-market-save"
+    class="btn btn-primary btn-lg btn-block"
+  >조회및저장하기</button>
+  <!-- </form> -->
+  <div class="row">
+    <div class="col-sm-12">
+      <h4 class="mt-4 mb-4 text-info">DB 저장 내역</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>날짜</th>
+            <th>청과</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each marketHistories}}
+            <tr>
+              <td>{{this.date}}</td>
+              <td><a
+                  href="/reqSaveInfo/show?id={{this._id}}"
+                >{{this.fruit}}</a></td>
+              <td style="text-align:center"><button
+                  type="button"
+                  data-id="{{this._id}}"
+                  class="btn btn-danger btn-delete-history"
+                >삭제</button></td>
+            </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

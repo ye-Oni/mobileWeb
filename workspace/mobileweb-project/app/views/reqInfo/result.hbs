@@ -1,0 +1,32 @@
+<!-- 경락정보조회(reqInfo) 결과 출력 view 페이지 템플릿(조회 결과 페이지) -->
+
+<div class="row">
+  <div class="col-sm-12">
+    <h4 class="mt-4 mb-4">{{query.date}}일 / {{fruit}} 도매경매 현황</h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>도매시장</th>
+          <th>도매법인</th>
+          <th>평균가</th>
+          <th>거래량</th>
+          <th>규격</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each marketResult.items.item}}
+          <tr>
+            <td>{{this.marketname}}</td>
+            <td>{{this.coname}}</td>
+            <td>{{this.avgprice}}</td>
+            <td>{{this.sumamt}}</td>
+            <td>{{this.unitname}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+<a href="/" class="btn btn-primary btn-lg btn-block">목록으로</a>
